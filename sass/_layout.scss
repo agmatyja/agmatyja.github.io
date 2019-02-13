@@ -1,0 +1,35 @@
+
+/* Add a black background color to the top navigation */
+.container {
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.container a {
+  float: left;
+  color: grey;
+  text-align: center;
+  //padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Change the color of links on hover */
+.container a:hover {
+  background-color: grey;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.container a.active {
+  background-color: white;
+  color: black;
+}
+.container {
+	display: block;
+	margin-right: 10px;
+}
+.chart {
+margin: 0 px;
+}
