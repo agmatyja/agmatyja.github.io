@@ -197,6 +197,9 @@ header .list {
 	position: relative;
 	
 }
+header ul {
+	margin: 0;
+}
 
 header .list-item {
 	display: inline-block;
@@ -205,7 +208,7 @@ header .list-item {
 	border-left: lightgray solid 1px;
 }
 
-li.list-item:hover {
+.list-item:hover {
 	background-color: #f5f5f2;
 }
 
@@ -263,8 +266,8 @@ a.hover:hover {
 	background-color: #979797;
 }
 .icons {
-	width: 14px;
-	height: 14px;
+	width: 15px;
+	height: 15px;
 	padding: 0 2px;
 	stroke: lightgray;
 }
@@ -272,6 +275,7 @@ a.hover:hover {
 
 .gen-stat {
 	text-align: center;
+	margin: 20px 0;
 	div {
 		display: inline-block;
 		white-space: nowrap;
@@ -282,17 +286,18 @@ a.hover:hover {
 	background-color: #F58220;
 	padding: 4px;
 	border: solid 1px #f58220;
-	border-radius: 20%;
 	margin: 20px 0;
 }
 
-.little-btn, .add-btn:hover {
+.little-btn:hover, .add-btn:hover {
 	background-color: #FFA200;
 }
 
 .little-btn {
 	stroke: white;
 	fill: white;
+	border-radius: 20%;
+	margin: 0;
 }
 
 .add-btn {
@@ -320,10 +325,36 @@ a.hover:hover {
 }
 .main {
 	margin-top: 70px;
-	padding-right: 20px;
-	padding-left: 170px;
-	width: 100%;
-	
+	width: 100%;	
+}
+
+.menu {
+	overflow: hidden;
+	height: 50px;
+}
+
+.menu.show {
+	height: 100%;
+}
+
+@media(min-width: 768px) {
+	.menu {
+		height: 100%;	
+	}	
+	.main {
+		padding-right: 20px;
+		padding-left: 170px;
+	}	
+}
+
+@media(min-width: 992px) {	
+	.center {
+		width: 50%;
+	}
+	.main {
+		padding-right: 20px;
+		padding-left: 170px;
+	}	
 }
 
 .container {	
@@ -406,13 +437,13 @@ div.manager {
 	border-bottom: solid lightgray 1px;
 	padding: 0 20%;
 	margin: 0 20px;
-	line-height: 50px;
+	line-height: 30px;
 	
 	.blue {
 		text-align: center;
 	}
 	.icons {
-		margin-top: 27px;
+		margin-top: 12px;
 		float: right;
 	}
 }
@@ -429,8 +460,8 @@ element.style {
 	margin: 0;
 }
 .center {
-	width: 50%;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .right {
