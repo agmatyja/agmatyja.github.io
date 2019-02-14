@@ -402,7 +402,7 @@ a.hover:hover { background-color: #979797; }
 
 .little-btn:hover, .add-btn:hover { background-color: #FFA200; }
 
-.little-btn { stroke: white; fill: white; border-radius: 20%; margin: 0; }
+.little-btn { stroke: white; fill: white; border-radius: 20%; margin: 0; width: 15px; height: 15px; }
 
 .add-btn { margin-left: 40%; width: 20%; display: inline-block; text-align: center; border-radius: 5%; color: white; }
 
