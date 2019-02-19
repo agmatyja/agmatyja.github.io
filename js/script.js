@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
-function toggleMenu(visible) {
-  document.querySelector('.menu').classList.toggle('show', visible)
-}
-document.querySelector('a.logo').addEventListener('click', function(e) {	
-  e.preventDefault();
-  toggleMenu()
-});
+	function toggleMenu(visible) {
+	  document.querySelector('.menu').classList.toggle('show', visible)
+	}
+	document.querySelector('a.logo').addEventListener('click', function(e) {	
+	  e.preventDefault();
+	  toggleMenu()
+	});
 	var ctx = document.getElementById('myChart').getContext('2d');
 
 	var chart = new Chart(ctx, {
@@ -40,4 +40,11 @@ document.querySelector('a.logo').addEventListener('click', function(e) {
 			}]
 		},
 	});
+	
+	flatpickr("#calendar", {
+		mode: "range",
+		dateFormat: "d.m.Y",
+		defaultDate: ["16.05.2016", "17.05.2016"]
+	});	
+
 });

@@ -15,21 +15,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.container-fluid {
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-
 
 @for $i from 1 through 12 {
   .col-sm-#{$i} {
@@ -40,10 +25,10 @@
 }
 
 body {
-background: #f5f5f2;
-font-family: "Open Sans";
-font-size: 12px;
-
+	background: #f5f5f2;
+	font-family: "Open Sans";
+	font-size: 12px;
+	color: #979797;
 }
 
 /*.clearfix:before, .row:before,
@@ -56,7 +41,25 @@ font-size: 12px;
 	clear: both;
 }*/
 
+.container {	
+	background-color: #ffffff;
+	border:  lightgray solid 1px;
+	padding: 15px;
+	margin: 0 auto;
+	width: 100%;
+}
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
+.content {
+	margin: 10px;
+	padding: 0;
+	background-color: #ffffff;	
+}
 
 [class*="col-"] {
 	float: left;
@@ -76,7 +79,7 @@ font-size: 12px;
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
     /* For tablets: */
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
@@ -199,6 +202,7 @@ header .list {
 }
 header ul {
 	margin: 0;
+	margin-block-end: -1px;
 }
 
 header .list-item {
@@ -212,11 +216,6 @@ header .list-item {
 	background-color: #f5f5f2;
 }
 
-/*header li {
-	display: inline-block;
-	border: solid 1px;
-}*/
-
 a {
 	text-decoration: none;
 
@@ -226,9 +225,9 @@ a {
 .sidebar {
   top: 0;
   margin: 0;
-  padding: 0;
-  width: 150px;
-  background-color: #000000;
+  padding: 5px;
+  width: 180px;
+  background-color: #333333;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -237,12 +236,11 @@ a {
 
 /* Sidebar links */
 .sidebar a {
-  display: block;
-  color: #f5f5f2;
-  padding: 14px;
-  text-decoration: none;
-  position: relative;
-  
+	display: block;
+	color: #f5f5f2;
+	padding: 14px;
+	text-decoration: none;
+	position: relative;  
 }
 
 .used-page {
@@ -251,25 +249,32 @@ a {
 }
 /* Active/current link */
 .sidebar a.active {
-  background-color: #4CAF50;
-  color: green;
-  border: solid 2px orange;
+	background-color: #4CAF50;
+	color: green;
+	border: solid 2px orange;
 }
-
-/* Links on mouse-over 
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: #ffffff;
-}*/
 
 a.hover:hover {
 	background-color: #979797;
 }
+.mobile {
+	display: inline-block;
+	text-align: left;
+	color: white;
+	text-decoration: none;
+	width: 100%;
+	.mobile-row {
+		padding: 14px 0;
+	}
+}
+ 
 .icons {
-	width: 15px;
-	height: 15px;
-	padding: 0 2px;
-	stroke: lightgray;
+	width: 13px;
+	height: 13px;
+	padding: 0 13px;
+	margin: 8px;
+	color: lightgray;
+	display: inline-block;
 }
 
 
@@ -284,22 +289,23 @@ a.hover:hover {
 
 .little-btn, .add-btn {
 	background-color: #F58220;
-	padding: 4px;
+	padding: 2px;
 	border: solid 1px #f58220;
 	margin: 20px 0;
+	color: white;
+	display: inline-block;
+	text-align: center;
 }
 
 .little-btn:hover, .add-btn:hover {
 	background-color: #FFA200;
 }
 
-.little-btn {
-	stroke: white;
-	fill: white;
+.little-btn {	
 	border-radius: 20%;
-	margin: 0;
-	width: 15px;
-	height: 15px;
+	margin: 0 auto;
+	height: 23px;
+	cursor: pointer;
 }
 
 .add-btn {
@@ -309,6 +315,21 @@ a.hover:hover {
 	text-align: center;
 	border-radius:5%;
 	color: white;	
+	cursor: pointer;
+}
+
+#calendar {
+	width: 170px;
+}
+
+.date-btn {
+	position: relative;
+	left: -40px;
+	top: 2px;
+	width: 0;
+	color: black;
+	cursor: pointer;
+	pointer-events: none;
 }
 
 .bold-value {
@@ -324,47 +345,27 @@ a.hover:hover {
 
 .green {
 	background-color: #04ae00;
+	border-radius: 50%;
+	height: 8px;
+	width: 8px;
 }
 .main {
-	margin-top: 70px;
+	margin-top: 40px;
 	width: 100%;	
 }
 
 .menu {
 	overflow: hidden;
-	height: 50px;
+	height: 70px;
 }
 
 .menu.show {
 	height: 100%;
+	overflow-y: auto;
 }
 
-@media(min-width: 768px) {
-	.menu {
-		height: 100%;	
-	}	
-	.main {
-		padding-right: 20px;
-		padding-left: 170px;
-	}	
-}
-
-@media(min-width: 992px) {	
-	.center {
-		width: 50%;
-	}
-	.main {
-		padding-right: 20px;
-		padding-left: 170px;
-	}	
-}
-
-.container {	
-	background-color: #ffffff;
-	border:  lightgray solid 1px;
-	padding: 5px;
-	margin-right: 10px;
-	width: 100%;
+#topnav {
+	display: none;
 }
 
 .underline {
@@ -377,6 +378,11 @@ a.hover:hover {
 	border-bottom: lightgray solid 1px;
 	width: 100%;
 }
+
+#manager {
+	margin-bottom: 10px;
+}
+
 div.manager {
 	display: block;
 	padding: 0;
@@ -397,15 +403,18 @@ div.manager {
     object-fit: cover;
 	position: absolute;
 	top: -8px;
-	left: 10px;
+	left: 6px;
 }
 .logo {
-	width: 90px;    
-    object-fit: cover;
-	position: absolute;
-	top: 5px;
+	top: 8px;
 	left: 10px;
 	margin-bottom: 22px;
+	img {
+		width: 85px;    
+		position: absolute;
+		top: 8px;
+		left: 10px;
+	}
 }
 
 .dot {
@@ -417,8 +426,8 @@ div.manager {
 	background: green;
 	z-index: 1;
 	position: absolute;
-	top: -10px;
-	right: 12px;
+	top: -5px;
+	right: 15px;
 }
 
 .orange-dot {
@@ -426,18 +435,18 @@ div.manager {
     width: 7px;    
     height: 7px;
     object-fit: cover;
-	background: orange;
-	border: solid orange 1px;
-	position: absolute;
-	top: 15px;
-	right: 183px;
+	background: #f58220;
+	border: solid #f58220 1px;
+	position: relative;
+	top: -7px;
+	right: 3px;
+	display: inline-block;
 }
 
 
 .links {
 	border-top: solid lightgray 1px;
 	border-bottom: solid lightgray 1px;
-	padding: 0 20%;
 	margin: 0 20px;
 	line-height: 30px;
 	
@@ -445,11 +454,18 @@ div.manager {
 		text-align: center;
 	}
 	.icons {
-		margin-top: 12px;
+		margin: 14px;
+		text-align: right;
+		wrap: nowrap;
 		float: right;
 	}
 }
 
+.icon {
+	margin: 0 auto;
+	padding: 4px;
+}	
+	
 .links:hover {
 	background: #f5f5f2;
 	.unvisibility {
@@ -473,15 +489,16 @@ element.style {
 }
 .hamburger {
 	position: relative;
-	left: 100px;
-	top: -4px;
-	height: 18px;
-	width: 18px;
+	left: 105px;
+	top: 0;
+	height: 16px;
+	width: 16px;
 	fill: white;
 }
 .grey {
 	color: #979797;
 	stroke: #979797;
+	wrap:nowrap;
 }
 
 .orange {
@@ -493,3 +510,30 @@ element.style {
 	visibility: hidden;
 }
 	
+@media(min-width: 768px) {
+	.menu {
+		height: 100%;	
+	}	
+	.main {
+		margin-top: 70px;
+		padding-right: 10px;
+		padding-left: 210px;
+	}	
+	.mobile {
+		display: none;
+	}
+	#topnav {
+		display: block;
+	}
+}
+
+@media(min-width: 992px) {	
+	.center {
+		width: 50%;
+	}
+	.links {
+		padding: 0 25%;
+	}
+}
+
+
